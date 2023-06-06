@@ -107,6 +107,6 @@ app.get('/end', (req, res) => {
 
 app.use('/api', route(io));
 
-server.listen(3000, '0.0.0.0', () => {
+server.listen(PORT, '0.0.0.0', () => {
   console.log('Server is listening on port:', PORT);
 });
