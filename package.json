@@ -10,7 +10,8 @@
     "start:client": "nodemon --exec 'npm run build' --ignore dist/",
     "start:server": "nodemon app.js",
     "build": "esbuild src/index.js --bundle --outfile=dist/index.js --target=es2017 --sourcemap",
-    "start": "concurrently \"npm run start:client\" \"npm run start:server\""
+    "start": "concurrently \"npm run start:client\" \"npm run start:server\"",
+    "prod": "node app.js"
   },
   "author": "",
   "license": "ISC",
