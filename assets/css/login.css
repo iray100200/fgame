@@ -1,0 +1,61 @@
+
+.start_page {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/assets/img/background.png');
+  background-size: auto 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-flex;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: green;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.start_page--container {
+  font-size: 14px;
+  width: 90vw;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 0 8px rgba(200, 200, 200, 0.2);
+  padding: 1.5rem;
+  background-color: rgba(250, 255, 255, 0.5);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.start_page--cloud {
+  height: 30vw;
+  width: 100vw;
+  position: absolute;
+  left: 0%;
+  top: -24%;
+  background-image: url('/assets/img/cloud2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.start_page--tree {
+  height: 50vw;
+  width: 50vw;
+  position: absolute;
+  left: 0%;
+  bottom: -12%;
+  background-image: url('/assets/img/tree2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.span {
+  height: 18px;
+  display: block;
+}
+
+.form-control {
+  padding: 0.45rem 0.75rem;
+}

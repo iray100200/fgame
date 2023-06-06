@@ -1,0 +1,59 @@
+body {
+  min-height: -webkit-fill-available;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.admin_page {
+  width: 100vw;
+  height: 100vh;
+  background-size: 100% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-flex;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: green;
+  position: absolute;
+  left: 0;
+  top: 0;
+  flex-direction: column;
+}
+
+.admin_page--note {
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.admin_page--container {
+  font-size: 14px;
+  width: 92vw;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 0 8px rgba(200, 200, 200, 0.2);
+  padding: 1.25rem;
+  background-color: rgba(250, 255, 255, 0.5);
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 30rem;
+  margin-bottom: 3rem;
+}
+
+.span {
+  height: 1rem;
+  display: block;
+}
+
+.form-control {
+  padding: 0.45rem 0.75rem;
+}

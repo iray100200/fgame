@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="full-screen" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no;" />
+  <script src="/lib/bootstrap.min.js"></script>
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/assets/css/login.css" />
+</head>
+
+<body>
+  <div class="start_page">
+    <div class="start_page--container">
+      <form method="post" action="/api/join" novalidate>
+        <input name="user_name" id="input" required class="form-control border-0" type="text"
+          placeholder="Your name" aria-label=".form-control-lg example">
+        <div class="span"></div>
+        <div class="d-grid gap-2">
+          <button id="btn" type="submit" class="btn btn-primary">JOIN THE GAME</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    function handleKeypressUpperCase(e) {
+      let el = e.target;
+      let charInput = e.keyCode;
+      if ((charInput >= 97) && (charInput <= 122)) { // lowercase
+        if (!e.ctrlKey && !e.metaKey && !e.altKey) { // no modifier key
+          let newChar = charInput - 32;
+          let start = el.selectionStart;
+          let end = el.selectionEnd;
+          el.value = el.value.substring(0, start) + String.fromCharCode(newChar) + el.value.substring(end);
+          el.setSelectionRange(start + 1, start + 1);
+          e.preventDefault();
+        }
+      }
+    }
+    const username = document.querySelector('[name="user_name"]');
+    const btn = document.get;
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+      form.classList.add('was-validated')
+    }, false)
+
+    id.addEventListener('keypress', handleKeypressUpperCase);
+
+    document.getElementById('input').addEventListener('blur', () => {
+      const timer = setTimeout(() => {
+        document.body.scrollTop = 0;
+        window.pageXOffset = 0;
+        document.documentElement.scrollTop = 0;
+        clearTimeout(timer);
+      }, 100);
+    })
+
+    document.body.addEventListener(
+      "touchmove",
+      (e) => {
+        e.preventDefault();
+        return false;
+      },
+      { passive: false }
+    );
+  </script>
+</body>
+
+</html>

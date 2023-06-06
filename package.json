@@ -1,0 +1,30 @@
+{
+  "name": "html5-bombergirl",
+  "version": "1.0.0",
+  "description": "HTML5 Bombergirl ================",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start:client": "nodemon --exec 'npm run build' --ignore dist/",
+    "start:server": "nodemon app.js",
+    "build": "esbuild src/index.js --bundle --outfile=dist/index.js --target=es2017 --sourcemap",
+    "start": "concurrently \"npm run start:client\" \"npm run start:server\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "easeljs": "^1.0.2",
+    "express": "^4.18.2",
+    "pathfinding": "^0.4.18",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "esbuild": "^0.17.18",
+    "nodemon": "~2.0.22"
+  }
+}

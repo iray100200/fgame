@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-size: cover;
+  min-height: -webkit-fill-available;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  background-color: rgba(199, 203, 178, 1);
+  background-image: url('/assets/img/grass.png');
+  background-position: 3px 34px;
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none!important;
+  overflow: hidden;
+}
+
+canvas {
+  user-select: none;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+  flex-direction: column;
+}
+
+#id {
+  color: #fff;
+  background-color: rgba(207, 222, 204, 0.0);
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Courier New', Consolas Courier, monospace;
+  height: 24px;
+  line-height: 24px;
+}
+
+#game {
+  padding: 0;
+  text-align: center;
+  flex-grow: 0;
+  padding: 0 0;
+  width: 100%;
+  padding-bottom: 24px;
+}
+
+#score {
+  background-size: 35.25px;
+  height: 1rem;
+}
+
+#controllers {
+  position: absolute;
+  padding: 1rem 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+}
+
+#button {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  border: none;
+  background-image: url('/assets/img/buttons.png');
+  background-position: 12% 20%;
+  background-size: 12rem;
+  bottom: 2rem;
+  right: 1rem;
+  flex-shrink: 0;
+}
+
+.hspan {
+  flex-grow: 1;
+  display: block;
+}
+
+#joystick {
+  flex-shrink: 0;
+  width: 8rem;
+  height: 8rem;
+  background-image: url("/assets/img/controller.png");
+  background-size: 110%;
+  background-position: center;
+}
+
+#left {
+  position: absolute;
+  left: 0;
+  right: 65%;
+  top: 30%;
+  bottom: 30%;
+  background-color: #fff;
+}
+
+#top {
+  position: absolute;
+  top: 0;
+  bottom: 65%;
+  left: 30%;
+  right: 30%;
+  background-color: #fff;
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Bomb Hero</title>
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+  <script type="text/javascript" src="/lib/preloadjs.min.js"></script>
+  <script type="text/javascript" src="/lib/soundjs.min.js"></script>
+  <script type="text/javascript" src="/lib/joystick.min.js"></script>
+  <!-- <script src="/lib/vue.js"></script> -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div id="id"></div>
+    <div id="game">
+      <div id="canvas_root"></div>
+    </div>
+  </div>
+  <script>
+    function extractCookies() {
+      return Object.fromEntries(document.cookie.split(/; */).map(c => {
+        const [key, ...v] = c.split('=');
+        return [key, decodeURIComponent(v.join('='))];
+      }));
+    }
+    document.addEventListener('gesturestart', (evt) => {
+      evt.preventDefault();
+    });
+    const cookies = extractCookies();
+    document.getElementById('id').innerHTML = cookies.id;
+    document.addEventListener('touchend', () => {
+      document.dispatchEvent(new CustomEvent('myclick'));
+    });
+  </script>
+
+  <script type="text/javascript" src="/index.js"></script>
+</body>
+
+</html>
