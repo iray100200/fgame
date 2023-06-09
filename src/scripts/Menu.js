@@ -50,7 +50,7 @@ const Menu = Class.extend({
   },
 
   showLoader: function () {
-    const bgGraphics = new createjs.Graphics().beginFill('#000000').drawRect(0, 0, gGameEngine.size.w, gGameEngine.size.h);
+    const bgGraphics = new createjs.Graphics().beginFill('green').drawRect(0, 0, gGameEngine.size.w, gGameEngine.size.h);
     const bg = new createjs.Shape(bgGraphics);
     gGameEngine.stage.addChild(bg);
 
