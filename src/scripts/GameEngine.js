@@ -152,11 +152,11 @@ const GameEngine = Class.extend({
 
     createjs.Sound.addEventListener('fileload', this.onSoundLoaded);
     createjs.Sound.alternateExtensions = ['mp3'];
-    createjs.Sound.registerSound('/assets/sound/bomb.mp3', 'bomb');
-    createjs.Sound.registerSound('/assets/sound/bgm.mp3', 'game');
-    createjs.Sound.registerSound('/assets/sound/diamond.mp3', 'diamond');
-    createjs.Sound.registerSound('/assets/sound/bonus.mp3', 'bonus');
-    createjs.Sound.registerSound('/assets/sound/countdown.mp3', 'countdown');
+    // createjs.Sound.registerSound('/assets/sound/bomb.mp3', 'bomb');
+    // createjs.Sound.registerSound('/assets/sound/bgm.mp3', 'game');
+    // createjs.Sound.registerSound('/assets/sound/diamond.mp3', 'diamond');
+    // createjs.Sound.registerSound('/assets/sound/bonus.mp3', 'bonus');
+    // createjs.Sound.registerSound('/assets/sound/countdown.mp3', 'countdown');
 
     // Create menu
     this.menu = new Menu();
