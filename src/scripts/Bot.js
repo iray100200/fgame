@@ -389,7 +389,7 @@ const Bot = Player.extend({
       });
       this.killerPath = null;
       this.findTargetPosition();
-      this.velocity = 2;
+      this.velocity = 1.5;
       this.bombsMax = 1;
       this.bombStrength = 1;
       this.alive = true;

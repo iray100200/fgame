@@ -39,12 +39,18 @@ const Diamond = Entity.extend({
 
 Diamond.colors = ['red', 'blue', 'lime', 'orange', 'purple', 'turquoise']
 Diamond.titles = {
-  red: ['客户至上 光芒万丈', 'Customer Obsessed'],
-  blue: ['同心同行 融合共赢', 'Together we achieve more'],
-  lime: ['创新不止 未来无限', 'Endless Applied Innovation'],
-  purple: ['引领变革 机会难得', 'Change brings new opportunities'],
-  turquoise: ['夯实技术 追求艺术', 'Passion for Excellence'],
-  orange: ['蓄力成长 共创辉煌', 'Live and Learn']
+  // We start with the customer experience and work backwards to the technology.
+  red: ['客户至上 光芒万丈', 'We start with the customer experience', 'and work backwords to the technology.', '- Steve Jobs'],
+  // None of us is as smart as all of us.
+  blue: ['同舟共济 融合共赢', 'None of us is an smart as all of us.', '- Kenneth H. Blanchard'],
+  // The best way to predict the future is to create it.
+  lime: ['创新不止 未来无限', 'The besy way to predict the future is to', 'create it.', '- Peter Drucker'],
+  // Change is the law of life, and those who look only to the past or the present are certain to miss the future.
+  purple: ['拥抱变化 同心同行', 'Change is the law of life, and those who look', 'only to the past or the present are certain to miss the future.', '- John F. Kennedy'],
+  // Think of technology more like a pain brush of an artist.
+  turquoise: ['夯实技术 追求艺术', 'Think of technology more like a pain brush', 'of an artist.', '- Ned Johnson'],
+  // Live as if you were to die tomorrow, learn as if you were to live forever.
+  orange: ['蓄力成长 共创辉煌', 'Live as if you were to die tomorrow, learn as', 'if you were to live forever.', '- Mahatma Grandhi']
 }
 
 export {

@@ -57,6 +57,9 @@ const Player = Entity.extend({
     'bomb': 'bomb'
   },
 
+  starttime: null,
+  endtime: null,
+
   collections: [],
 
   /**
@@ -101,6 +104,7 @@ const Player = Entity.extend({
 
     this.bombs = [];
     this.setBombsListener();
+    this.starttime = Date.now();
   },
 
   create: function (position) {
@@ -508,7 +512,10 @@ const Player = Entity.extend({
     if (this.collections.length === Diamond.colors.length) {
       gGameEngine.menu.show();
       gGameEngine.text('You win');
-      gGameEngine.eventBus.dispatchEvent(new CustomEvent('win'));
+      this.endtime = Date.now();
+      gGameEngine.eventBus.dispatchEvent(new CustomEvent('win', {
+        detail: this.endtime - this.starttime
+      }));
       gGameEngine.playing = false;
       this.animate('idle');
     }
@@ -545,7 +552,7 @@ const Player = Entity.extend({
     this.fade();
     this.path = [];
     gGameEngine.die();
-    this.velocity = 2;
+    this.velocity = 1.5;
     this.bombsMax = 1;
     this.bombStrength = 1;
   },

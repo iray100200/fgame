@@ -23,6 +23,12 @@
     </div>
   </div>
   <script>
+    function extractCookies() {
+      return Object.fromEntries(document.cookie.split(/; */).map(c => {
+        const [key, ...v] = c.split('=');
+        return [key, decodeURIComponent(v.join('='))];
+      }));
+    }
     function handleKeypressUpperCase(e) {
       let el = e.target;
       let charInput = e.keyCode;
@@ -37,7 +43,9 @@
         }
       }
     }
+    const cookies = extractCookies();
     const username = document.querySelector('[name="user_name"]');
+    username.value = cookies.username;
     const btn = document.get;
     const form = document.querySelector('form');
 
@@ -47,7 +55,7 @@
         event.stopPropagation()
       }
       form.classList.add('was-validated')
-    }, false)
+    }, false);
 
     id.addEventListener('keypress', handleKeypressUpperCase);
 

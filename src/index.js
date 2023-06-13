@@ -75,6 +75,7 @@ gGameEngine.eventBus.addEventListener('gain', (evt) => {
 gGameEngine.eventBus.addEventListener('win', (evt) => {
   socket.emit('win', {
     id: cookies.id,
+    timespan: evt.detail
   })
 });
 

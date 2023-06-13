@@ -37,14 +37,10 @@ const Dialogue = Class.extend({
     gGameEngine.stage.addChild(this.mask);
 
     if (this.count === Diamond.colors.length) {
-      const success = new createjs.Bitmap(gGameEngine.dialogueImages.d6);
-      const scale = gGameEngine.size.w / success.image.width
-      success.scaleX = scale;
-      success.scaleY = scale;
-      success.y = gGameEngine.size.h / 2 - success.image.height * scale / 2;
-      gGameEngine.stage.addChild(success);
-      this.views.push(success);
-      return
+      setTimeout(() => {
+        window.location.href = '/success';
+      }, 2000)
+      return;
     }
 
     this.diamonds.forEach((t, index) => {
@@ -53,39 +49,44 @@ const Dialogue = Class.extend({
       diamond.scaleX = scale;
       diamond.scaleY = scale;
       diamond.x = gGameEngine.size.w / 2 - ((this.diamonds.length - 1) / 2 - index) * 50 - 20;
-      diamond.y = gGameEngine.size.h / 2 - 90;
+      diamond.y = gGameEngine.size.h / 2 - 20;
       gGameEngine.stage.addChild(diamond);
       this.views.push(diamond);
     });
 
     const titles = Diamond.titles[this.current.color];
 
-    const t01 = new createjs.Text(titles[0], 'bold 28px Arial', '#ffffff');
-    t01.x = gGameEngine.size.w / 2 - t01.getMeasuredWidth() * 0.75 / 2;
-    t01.y = gGameEngine.size.h / 2 - 180;
-    t01.scaleX = 0.75;
-    t01.scaleY = 0.75;
-    gGameEngine.stage.addChild(t01);
-    this.views.push(t01);
-
-    const t02 = new createjs.Text(titles[1], 'bold 28px Arial', '#ffffff');
-    t02.x = gGameEngine.size.w / 2 - t02.getMeasuredWidth() * 0.75 / 2;
-    t02.y = gGameEngine.size.h / 2 - 140;
-    t02.scaleX = 0.75;
-    t02.scaleY = 0.75;
-    gGameEngine.stage.addChild(t02);
-    this.views.push(t02);
+    titles.forEach((title, index) => {
+      let font = 'bold 28px Arial';
+      let margin = 35;
+      if (index > 1) {
+        margin = 30;
+      }
+      if (index > 0) {
+        font = 'normal 20px Arial';
+      }
+      if (index === titles.length - 1) {
+        font = 'bold 22px Arial';
+      }
+      const t01 = new createjs.Text(title, font, '#ffffff');
+      t01.x = gGameEngine.size.w / 2 - t01.getMeasuredWidth() * 0.75 / 2;
+      t01.y = gGameEngine.size.h / 2 - 180 + index * margin;
+      t01.scaleX = 0.75; 
+      t01.scaleY = 0.75;
+      gGameEngine.stage.addChild(t01);
+      this.views.push(t01);
+    });
 
     const t1 = new createjs.Text(`恭喜你获得文化宝石${this.count}颗`, 'normal 28px Arial', '#ffffff');
     t1.x = gGameEngine.size.w / 2 - t1.getMeasuredWidth() * 0.75 / 2;
-    t1.y = gGameEngine.size.h / 2 - 20;
+    t1.y = gGameEngine.size.h / 2 + 40;
     t1.scaleX = 0.75;
     t1.scaleY = 0.75;
     gGameEngine.stage.addChild(t1);
 
     const t2 = new createjs.Text(`还有${6 - this.count}颗达成目标`, 'normal 28px Arial', '#ffffff');
     t2.x = gGameEngine.size.w / 2 - t2.getMeasuredWidth() * 0.75 / 2;
-    t2.y = gGameEngine.size.h / 2 + 20;
+    t2.y = gGameEngine.size.h / 2 + 80;
     t2.scaleX = 0.75;
     t2.scaleY = 0.75;
     gGameEngine.stage.addChild(t2);

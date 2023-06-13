@@ -117,7 +117,6 @@ const GameEngine = Class.extend({
       that.bonusesImg = queue.getResult('bonuses');
       that.diamondImg = queue.getResult('diamond');
       that.startBtn = queue.getResult('start_btn');
-      that.dialogueImages.d6 = queue.getResult('dall');
       Diamond.colors.forEach(color => {
         const name = `diamond_${color}`;
         that[name] = queue.getResult(name);
@@ -137,8 +136,7 @@ const GameEngine = Class.extend({
       { id: 'bonuses', src: '/assets/img/bonuses.png' },
       { id: 'straw', src: '/assets/img/straw.png' },
       { id: 'ground', src: '/assets/img/ground.png' },
-      { id: 'start_btn', src: '/assets/img/start.png' },
-      { id: 'dall', src: '/assets/img/getall.png' }
+      { id: 'start_btn', src: '/assets/img/start.png' }
     ];
 
     Diamond.colors.forEach(color => {
@@ -215,6 +213,7 @@ const GameEngine = Class.extend({
     if (this.soundtrackLoaded) {
       this.playSoundtrack();
     }
+    
   },
 
   onSoundLoaded: function (sound) {
@@ -429,10 +428,6 @@ const GameEngine = Class.extend({
 
   text: function (text) {
     this.menu.text(text);
-  },
-
-  win: function () {
-
   },
 
   die: function () {

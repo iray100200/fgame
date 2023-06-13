@@ -40,18 +40,20 @@ io.on('connection', (socket) => {
     });
   });
 
-  socket.on('win', ({ id }) => {
+  socket.on('win', ({ id, timespan }) => {
     console.log(id, 'colleced all the diamonds');
     let item;
     if (!results.has(id)) {
       item = {
         count: 1,
+        timespan,
         timestamp: Date.now(),
       };
       results.set(id, item);
     } else {
       item = results.get(id);
       item.count += 1;
+      item.timespan = timespan;
     }
     const result = getResult();
     io.sockets.emit('result', result);
@@ -101,9 +103,9 @@ app.get('/result', (req, res) => {
   ).pipe(res);
 });
 
-app.get('/end', (req, res) => {
+app.get('/success', (req, res) => {
   fs.createReadStream(
-    path.resolve(__dirname, 'end.html')
+    path.resolve(__dirname, 'success.html')
   ).pipe(res);
 });
 
