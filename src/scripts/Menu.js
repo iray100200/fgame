@@ -54,7 +54,7 @@ const Menu = Class.extend({
     const bg = new createjs.Shape(bgGraphics);
     gGameEngine.stage.addChild(bg);
 
-    const loadingText = new createjs.Text('Loading...', '20px Helvetica', '#FFFFFF');
+    const loadingText = new createjs.Text('LOADING...', 'bold 20px Helvetica', '#FFFFFF');
     loadingText.x = gGameEngine.size.w / 2 - loadingText.getMeasuredWidth() / 2;
     loadingText.y = gGameEngine.size.h / 2 - loadingText.getMeasuredHeight() / 2;
     gGameEngine.stage.addChild(loadingText);
