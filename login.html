@@ -45,7 +45,7 @@
     }
     const cookies = extractCookies();
     const username = document.querySelector('[name="user_name"]');
-    username.value = cookies.username;
+    username.value = cookies.username || '';
     const btn = document.get;
     const form = document.querySelector('form');
 
