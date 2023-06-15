@@ -60,9 +60,10 @@ window.unit = canvas.offsetHeight / gGameEngine.tilesY;
 gGameEngine.load();
 
 gGameEngine.eventBus.addEventListener('loaded', () => {
+  document.getElementById('loader').style.display = 'none';
   detectPlayingStatusPromise.then(() => {
     gGameEngine.start();
-  })
+  });
 });
 
 gGameEngine.eventBus.addEventListener('gain', (evt) => {
@@ -104,6 +105,7 @@ function initJoyStick() {
     pos.y = evt.touches[0].clientY;
     timing.value = Date.now();
   });
+
   document.addEventListener('touchmove', (evt) => {
     if (!gGameEngine.menu.visible || evt.touches.length === 2) {
       evt.preventDefault();

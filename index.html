@@ -19,6 +19,10 @@
       <div id="canvas_root"></div>
     </div>
   </div>
+  <div id="loader" class="loader-container">
+    <div class="loading-text">Loading</div>
+    <div class="loader"></div>
+  </div>
   <script>
     function extractCookies() {
       return Object.fromEntries(document.cookie.split(/; */).map(c => {
@@ -30,7 +34,7 @@
       evt.preventDefault();
     });
     const cookies = extractCookies();
-    document.getElementById('id').innerHTML = cookies.id;
+    document.getElementById('id').innerHTML = cookies.id || '';
     document.addEventListener('touchend', () => {
       document.dispatchEvent(new CustomEvent('myclick'));
     });
