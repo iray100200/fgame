@@ -94,7 +94,7 @@ const Menu = Class.extend({
     gGameEngine.stage.update();
 
     orderBtn.addEventListener('click', function() {
-      window.open('/result', '_blank');
+      window.open('/result');
     });
   },
 

@@ -69,8 +69,8 @@ function getResult() {
       ...results.get(key),
     });
   });
-  return result.sort((a, b) => {
-    a.timestamp - b.timestamp;
+  return result.filter(t => t.timespan).sort((a, b) => {
+    a.timespan - b.timespan;
   });
 }
 

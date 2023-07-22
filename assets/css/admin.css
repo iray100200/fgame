@@ -46,7 +46,11 @@ body {
   border-radius: 12px;
   overflow: hidden;
   max-width: 30rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+}
+
+.admin-page--play-again {
+  color: #fff;
 }
 
 .span {
