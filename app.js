@@ -70,7 +70,7 @@ function getResult() {
     });
   });
   return result.filter(t => t.timespan).sort((a, b) => {
-    a.timespan - b.timespan;
+    return a.timespan - b.timespan;
   });
 }
 
