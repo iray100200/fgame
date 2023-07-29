@@ -31,7 +31,9 @@
           <tr v-for="(item, index) in result">
             <th scope="row">{{ index + 1 }}</th>
             <td>{{ item.id }}</td>
-            <td>{{ item.username }}</td>
+            <td>
+              <div class="admin_page--item">{{ item.username }}</div>
+            </td>
             <td>{{ item.timespan && Math.round(item.timespan / 1000) }}s</td>
           </tr>
         </tbody>

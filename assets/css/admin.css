@@ -53,6 +53,12 @@ body {
   color: #fff;
 }
 
+.admin_page--item {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .span {
   height: 1rem;
   display: block;
