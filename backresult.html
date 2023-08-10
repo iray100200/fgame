@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="full-screen" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
+  <script src="/lib/bootstrap.min.js"></script>
+  <script src="/lib/socket.io-client.min.js"></script>
+  <script src="/lib/moment.min.js"></script>
+  <script src="/lib/vue.js"></script>
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/assets/css/admin.css" />
+</head>
+
+<body>
+  <div class="admin_page" id="app">
+    <div class="admin_page--note">TOP 10</div>
+    <div class="admin_page--container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">玩家</th>
+            <th scope="col">用时</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in result">
+            <th scope="row">{{ index + 1 }}</th>
+            <td>{{ item.id }}</td>
+            <td>
+              <div class="admin_page--item">{{ item.username }}</div>
+            </td>
+            <td>{{ item.timespan && Math.round(item.timespan / 1000) }}s</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button @click="replay" class="btn btn-link admin-page--play-again">再玩一次</button>
+  </div>
+  <script>
+    const { createApp } = Vue
+
+    createApp({
+      data() {
+        return {
+          result: [
+            
+          ]
+        }
+      },
+      computed: {
+        moment() {
+          return moment;
+        }
+      },
+      methods: {
+        replay() {
+          location.href = '/'
+        }
+      },
+      mounted() {
+        const socket = io({
+          query: {
+            id: 'Admin'
+          }
+        });
+        socket.on('result', (result) => {
+          this.result = result;
+        });
+      }
+    }).mount('#app')
+  </script>
+</body>
+
+</html>

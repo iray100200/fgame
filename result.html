@@ -48,8 +48,87 @@
       data() {
         return {
           result: [
-            
-          ]
+            {
+              id: '530R8',
+              username: 'Sharon Yang',
+              timespan: 126000
+            },
+            {
+              id: '338E6',
+              username: 'a602819',
+              timespan: 198000
+            },
+            {
+              id: '02669',
+              username: 'Bright',
+              timespan: 100000
+            },
+            {
+              id: '624SO',
+              username: 'Bill W',
+              timespan: 164000
+            },
+            {
+              id: '7255B',
+              username: 'KW',
+              timespan: 275000
+            },
+            {
+              id: '37826',
+              username: 'cookie',
+              timespan: 267000
+            },
+            {
+              id: '25880',
+              username: 'Danica',
+              timespan: 165000
+            },
+            {
+              id: '241TG',
+              username: '-',
+              timespan: 122000
+            },
+            {
+              id: '6278U',
+              username: 'Joey',
+              timespan: 169000
+            },
+            {
+              id: '612JT',
+              username: 'A529705',
+              timespan: 222000
+            },
+            {
+              id: '859IQ',
+              username: 'a523349',
+              timespan: 140000
+            },
+            {
+              id: '506UN',
+              username: 'Leo Wang',
+              timespan: 110000
+            },
+            {
+              id: '480DI',
+              username: 'a669677',
+              timespan: 330000
+            },
+            {
+              id: '774JE',
+              username: 'whit top',
+              timespan: 153000
+            },
+            {
+              id: '603S4',
+              username: 'TIM WEI',
+              timespan: 122000
+            },
+            {
+              id: '617QP',
+              username: 'jach, gong',
+              timespan: 189000
+            }
+          ].sort((a, b) => a.timespan - b.timespan)
         }
       },
       computed: {
@@ -63,14 +142,16 @@
         }
       },
       mounted() {
-        const socket = io({
-          query: {
-            id: 'Admin'
-          }
-        });
-        socket.on('result', (result) => {
-          this.result = result;
-        });
+        // const socket = io({
+        //   query: {
+        //     id: 'Admin'
+        //   }
+        // });
+        // socket.on('result', (result) => {
+        //   this.result = result;
+        // });
+
+        
       }
     }).mount('#app')
   </script>
