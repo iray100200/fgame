@@ -149,7 +149,7 @@
           }
         });
         socket.on('result', (result) => {
-          this.result = result.concat(backup).sort((a, b) => a.timespan - b.timespan);
+          this.result = result.concat(backup).slice(0, 10).sort((a, b) => a.timespan - b.timespan);
         });
       }
     }).mount('#app')
