@@ -43,11 +43,7 @@
   </div>
   <script>
     const { createApp } = Vue
-
-    createApp({
-      data() {
-        return {
-          result: [
+    const backup = [
             {
               id: '530R8',
               username: 'Sharon Yang',
@@ -128,7 +124,12 @@
               username: 'jach, gong',
               timespan: 189000
             }
-          ].sort((a, b) => a.timespan - b.timespan)
+          ]
+
+    createApp({
+      data() {
+        return {
+          result: []
         }
       },
       computed: {
@@ -142,16 +143,14 @@
         }
       },
       mounted() {
-        // const socket = io({
-        //   query: {
-        //     id: 'Admin'
-        //   }
-        // });
-        // socket.on('result', (result) => {
-        //   this.result = result;
-        // });
-
-        
+        const socket = io({
+          query: {
+            id: 'Admin'
+          }
+        });
+        socket.on('result', (result) => {
+          this.result = result.concat(backup).sort((a, b) => a.timespan - b.timespan);
+        });
       }
     }).mount('#app')
   </script>
