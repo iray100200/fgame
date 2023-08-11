@@ -10,6 +10,7 @@
   <script src="/lib/socket.io-client.min.js"></script>
   <script src="/lib/moment.min.js"></script>
   <script src="/lib/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/assets/css/admin.css" />
 </head>
@@ -149,7 +150,7 @@
           }
         });
         socket.on('result', (result) => {
-          this.result = result.concat(backup).slice(0, 10).sort((a, b) => a.timespan - b.timespan);
+          this.result = _.uniqBy(result.concat(backup).sort((a, b) => a.timespan - b.timespan), 'username').slice(0, 10);
         });
       }
     }).mount('#app')
