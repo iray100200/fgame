@@ -150,7 +150,7 @@
           }
         });
         socket.on('result', (result) => {
-          this.result = _.sortedUniqBy(result.concat(backup), 'username').slice(0, 10);
+          this.result = _.sortedUniqBy(result.concat(backup), x => x.username).slice(0, 10);
         });
       }
     }).mount('#app')
