@@ -33,7 +33,7 @@
             <th scope="row">{{ index + 1 }}</th>
             <td>{{ item.id }}</td>
             <td>
-              <div class="admin_page--item">{{ item.username }}</div>
+              <div class="admin_page--item">{{ decodeName(item.username) }}</div>
             </td>
             <td>{{ item.timespan && Math.round(item.timespan / 1000) }}s</td>
           </tr>
@@ -141,6 +141,13 @@
       methods: {
         replay() {
           location.href = '/'
+        },
+        decodeName(name) {
+          try {
+            return decodeURIComponent(name)
+          } catch(err) {
+            return name
+          }
         }
       },
       mounted() {
