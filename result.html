@@ -11,6 +11,7 @@
   <script src="/lib/moment.min.js"></script>
   <script src="/lib/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+  <script src="/lib/gbk.min.js"></script>
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/assets/css/admin.css" />
 </head>
@@ -146,7 +147,7 @@
           try {
             return decodeURIComponent(name)
           } catch(err) {
-            return name
+            return GBK.URI.decodeURI(name)
           }
         }
       },
